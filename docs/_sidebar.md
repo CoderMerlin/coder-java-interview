@@ -15,7 +15,7 @@
 * Java
 
   * [Java基础](./docs/c-1面试题总结-Java基础.md)
-  * [Java集合](./docs/c-2Java集合.md)
+  * [Java集合](./docs/c-2java集合.md)
   * [Java多线程](./docs/c-3Java多线程.md)
   * [jvm](./docs/c-4jvm.md)
   
