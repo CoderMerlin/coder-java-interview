@@ -190,6 +190,7 @@ ConcurrentModificationException？在遍历一个集合的时候我们可以使�
 - 返回零长度的集合或者数组，而不是返回一个 `null` ，这样可以防止底层集合是空的。
 
 
+
 ### 24. List 和 Set 区别？
 
 `List`，`Set` 都是继承自 `Collection` 接口。
