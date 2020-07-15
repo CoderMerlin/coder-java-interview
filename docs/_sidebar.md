@@ -4,8 +4,6 @@
 
 * [备战面试](./docs/a-1备战面试.md)
 
-
-
 * 计算机基础
 
   * [计算机网络](./docs/b-1计算机网络.md)
@@ -23,8 +21,9 @@
   
 * 数据库
 
-  * [Mysql](./docs/d-1Mysql.md)
-  * [Mysql](./docs/d-2Mysql.md)
+  * [Mysql](./docs/d-1mysql.md)
+  * [Mysql](./docs/d-2mysql.md)
+  * [Redis](./docs/d-3redis.md)
   
 * 框架系列
 
