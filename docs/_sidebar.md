@@ -4,7 +4,7 @@
   * [简历优化](./docs/a-2简历优化.md)
   * [HR问答](./docs/a-3HR问答.md)
   
-* [计算机基础]
+* [:personal computer:计算机基础]
 
   * [计算机网络](./docs/b-1计算机网络.md)
   * [数据结构](./docs/b-2数据结构.md)
@@ -44,7 +44,9 @@
 * [Linux系列]
 
   * [Linux](./docs/g-1linux.md)
-  
+
+* [面试记录]
+  * [大厂面试记录](./docs/x-1大厂面试记录.md)  
 
 * [其他]
   
