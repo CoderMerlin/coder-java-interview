@@ -7,8 +7,9 @@
 3）打开server.xml文件
 
 4）在server.xml文件里面找到下列信息
-
+```xml
 <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" uriEncoding="utf-8"/>
+```
 port="8080"改成你想要的端口
 
 ### 2. tomcat 有哪几种Connector 运行模式(优化)？
@@ -27,6 +28,8 @@ acceptorThreadCount=”2” 使用NIO模型时接收线程的数目
 
 aio(nio.2)：JDK7开始支持，异步非阻塞IO。
 apr：Tomcat将以JNI的形式调用Apache HTTP服务器的核心动态链接库来处理文件读取或网络传输操作，从而大大地 提高Tomcat对静态文件的处理性能。
+
+```xml
 <!--
       <Connector connectionTimeout="20000" port="8000" protocol="HTTP/1.1" redirectPort="8443" uriEncoding="utf-8"/>
     -->
@@ -44,6 +47,7 @@ apr：Tomcat将以JNI的形式调用Apache HTTP服务器的核心动态链接库
         acceptCount="200"
         enableLookups="false"       
     />
+```	
 其他配置
 maxHttpHeaderSize="8192" http请求头信息的最大程度，超过此长度的部分不予处理。一般8K。 
 URIEncoding="UTF-8" 指定Tomcat容器的URL编码格式。 
@@ -103,7 +107,7 @@ useURIValidationHack:
 我们来看一下tomcat中的一段源码：
 
 【security】
-
+```
 if (connector.getUseURIValidationHack()) {
 
 String uri = validate(request.getRequestURI());
@@ -125,6 +129,8 @@ req.requestURI().setString(uri);
 req.decodedURI().duplicate(req.requestURI());
 
 req.getURLDecoder().convert(req.decodedURI(), true);
+```
+
 
 可以看到如果把useURIValidationHack设成”false”，可以减少它对一些url的不必要的检查从而减省开销。
 
@@ -134,9 +140,13 @@ disableUploadTimeout ：类似于Apache中的keeyalive一样
 
 给Tomcat配置gzip压缩(HTTP压缩)功能
 
+```
+
 compression=”on” compressionMinSize=”2048″
 
 compressableMimeType=”text/html,text/xml,text/JavaScript,text/css,text/plain”
+
+```
 
 HTTP 压缩可以大大提高浏览网站的速度，它的原理是，在客户端请求网页后，从服务器端将网页文件压缩，再下载到客户端，由客户端的浏览器负责解压缩并浏览。相对于普通的浏览过程HTML,CSS,javascript , Text ，它可以节省40%左右的流量。更为重要的是，它可以对动态生成的，包括CGI、PHP , JSP , ASP , Servlet,SHTML等输出的网页也能进行压缩，压缩效率惊人。
 
@@ -149,6 +159,8 @@ HTTP 压缩可以大大提高浏览网站的速度，它的原理是，在客户
 4)compressableMimeType=”text/html,text/xml”　压缩类型
 
 最后不要忘了把8443端口的地方也加上同样的配置，因为如果我们走https协议的话，我们将会用到8443端口这个段的配置，对吧？
+
+```xml
 
 <!–enable tomcat ssl–>
 
@@ -175,6 +187,8 @@ clientAuth=”false” sslProtocol=”TLS”
 keystoreFile=”d:/tomcat2/conf/shnlap93.jks” keystorePass=”aaaaaa”
 
 />
+```
+
 
 好了，所有的Tomcat优化的地方都加上了。
 
