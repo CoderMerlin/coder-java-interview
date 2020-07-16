@@ -37,6 +37,10 @@
 * Linux系列
   * [Linux](./docs/f-1linux.md)
   
+
+* 其他
+  * [设计模式](./docs/y-1设计模式.md)
+  
 * 更新记录
 
   * [记录](./docs/z-更新记录.md)
