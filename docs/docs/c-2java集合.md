@@ -269,7 +269,7 @@ PriorityQueue是一个基于优先级堆的无界有序队列，它的元素是�
 Github: https://github.com/CoderMerlin/coder-programming
 Gitee: https://gitee.com/573059382/coder-programming
 欢迎**关注**并star~
-![微信公众号](https://upload-images.jianshu.io/upload_images/7326374-4a93eb93c3882ff2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号](image/log.jpg)
 
 
 

@@ -24,9 +24,9 @@
   - [x] SpringCloud
   - [ ] Mybatis
 - [ ] 数据库系列
-- [ ] 
-- [ ] 
-
+- [ ] 中间件
+- [ ] 面试记录
+- [ ] 等等
 
 
 # :loudspeaker: Coder-Programming(Coder编程)介绍 #
@@ -59,27 +59,11 @@
 
 
 
-## :mega: 1.面试题and笔试题 ##
 
-> JAVA相关面试题，祝各位找到好工作！
+## 公众号 && QQ群
 
-| :notebook:JAVA基础面试题 | :notebook:数据库面试题 | :notebook:多线程面试题 | :notebook:微服务面试题 |:notebook:Spring面试题 |
-| :------:| :------: | :------: | :------: |:------: |
-| [JAVA基础面试题](src/01-java-interview/README.md)| [数据库面试题](src/01-java-interview/README.md) | [多线程面试题](src/01-java-interview/README.md) | [微服务面试题](src/01-java-interview/README.md) | [其他算法](src/01-java-interview/README.md) | 
-
-| :notebook:SpringMVC面试题 | :notebook:SpringBoot面试题 |:notebook:SpringCloud面试题 |:notebook:Redis面试题 |:notebook:设计模式面试题 |
-| :------:| :------: | :------: | :------: |:------: |
-| [SpringMVC面试题](src/01-java-interview/README.md)| [SpringBoot面试题](src/01-java-interview/README.md) | [SpringCloud面试题](src/01-java-interview/README.md) | [Redis面试题](src/01-java-interview/README.md) | [设计模式面试题](src/01-java-interview/README.md) | 
-
-| :notebook:JAVA基础笔试题 |
-| :------:| 
-| [JAVA基础笔试题](src/01-java-interview/04-java-base-written/README.md)|
-
-
-## 公众号
-
-![公众号](https://oscimg.oschina.net/oscnet/12fe7873f956cdb992a3df19db0c84bf6f7.jpg)
-
+![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=150')
+![QQ群](https://oscimg.oschina.net/oscnet/up-47c8f6404e22b3e2821cb97e7a4df8e3f2b.JPEG ':size=100')
 
 # :mega: 最后： #
 

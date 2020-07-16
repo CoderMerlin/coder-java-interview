@@ -4,7 +4,7 @@
   * [简历优化](./docs/a-2简历优化.md)
   * [HR问答](./docs/a-3HR问答.md)
   
-* [:personal computer:计算机基础]
+* [:computer:计算机基础]
 
   * [计算机网络](./docs/b-1计算机网络.md)
   * [数据结构](./docs/b-2数据结构.md)
@@ -12,16 +12,16 @@
   * [操作系统](./docs/b-4操作系统.md)
   * [Leetcode刷题](./docs/b-5Leetcode.md)
   
-* [Java]
+* [	:coffee:Java]
   * [Java基础面试（上）](./docs/c-1Java基础上.md)
   * [Java基础面试（中）](./docs/c-2Java基础中.md)
   * [Java基础面试（下）](./docs/c-3Java基础下.md)
   * [Java集合](./docs/c-2java集合.md)
   * [Java多线程](./docs/c-3Java多线程.md)
-  * [jvm](./docs/c-4jvm.md)
+  * [JVM虚拟机](./docs/c-4jvm.md)
   
   
-* [数据库]
+* [:information_source:数据库]
 
   * [Mysql](./docs/d-1mysql.md)
   * [Mysql](./docs/d-2mysql.md)

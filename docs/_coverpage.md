@@ -1,4 +1,4 @@
-![logo](_media/icon.svg)
+![logo](image/log.jpg ':size=100')
 
 # Coder编程 <small>3.5</small>
 
