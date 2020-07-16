@@ -34,8 +34,12 @@
   * [SpringBoot](./docs/e-3springboot.md)
   * [SpringCloud](./docs/e-4springcloud.md)
   
+* 中间件系列
+  
+  * [RabbitMQ](./docs/f-1rabbitmq.md)
+  
 * Linux系列
-  * [Linux](./docs/f-1linux.md)
+  * [Linux](./docs/g-1linux.md)
   
 
 * 其他
