@@ -62,8 +62,8 @@
 
 ## 公众号 && QQ群
 
-![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=150')
-![QQ群](https://oscimg.oschina.net/oscnet/up-47c8f6404e22b3e2821cb97e7a4df8e3f2b.JPEG ':size=100')
+![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=300')
+![QQ群](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/BLOG01/qq群.png ':size=200')
 
 # :mega: 最后： #
 

@@ -1,4 +1,4 @@
-![logo](image/log.jpg ':size=100')
+![logo](image/log.png ':size=100')
 
 # Coder编程 <small>3.5</small>
 
