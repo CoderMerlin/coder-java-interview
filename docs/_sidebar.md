@@ -1,5 +1,3 @@
-* [Git使用教程](./docs/2git提交规范.md)
-
 * [:busts_in_silhouette:备战面试]
 
   * [面试准备](./docs/a-1备战面试.md)
@@ -12,7 +10,7 @@
   * [数据结构](./docs/b-2数据结构.md)
   * [算法](./docs/b-3算法.md)
   * [操作系统](./docs/b-4操作系统.md)
-  * [Leetcode刷题](./docs/b-5)
+  * [Leetcode刷题](./docs/b-5Leetcode.md)
   
 * [Java]
   * [Java基础面试（上）](./docs/c-1Java基础上.md)

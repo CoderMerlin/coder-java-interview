@@ -2,13 +2,11 @@
 
 # Coder编程 <small>3.5</small>
 
-> 一个Java学习地
+> 一个最全Java面试资料地点
 
-- 分享Java学习资料
-- 无需生成 html 文件
-- 众多主题
+- 这里将收录最全的面试题
+- 帮助你获得最合适的工作岗位
 
-[今日头条](https://github.com/CoderMerlin)
+
 [GitHub](https://github.com/CoderMerlin)
-[Gitee](https://github.com/CoderMerlin)
-[知乎](https://github.com/CoderMerlin)
+[Gitee](https://gitee.com/573059382)
