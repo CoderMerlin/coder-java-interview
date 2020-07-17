@@ -19,6 +19,7 @@
   * [Java集合](./docs/c-2java集合.md)
   * [Java多线程](./docs/c-3Java多线程.md)
   * [JVM虚拟机](./docs/c-4jvm.md)
+  * [Java笔试集合](./docs/c-5java笔试.md)
   
 * [:information_source:数据库]
 
@@ -34,11 +35,16 @@
   * [Spring](./docs/e-1spring.md)
   * [SpringMVC](./docs/e-2springmvc.md)
   * [SpringBoot](./docs/e-3springboot.md)
-  * [SpringCloud](./docs/e-4springcloud.md)
+
   
 * [中间件系列]
   
   * [RabbitMQ](./docs/f-1rabbitmq.md)
+  
+* [微服务系列]
+
+  * [SpringCloud](./docs/g-1springcloud.md)
+  * [Dubbo](./docs/g-2dubbo.md)
   
 * [Linux系列]
 
