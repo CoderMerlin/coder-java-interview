@@ -2,8 +2,6 @@
 
 > JAVA相关笔试题，祝各位找到好工作！
 
-* [400道——大厂Java选择题](https://mp.weixin.qq.com/s?__biz=MzIwMTg3NzYyOA==&mid=2247484198&idx=1&sn=9c9d8c2dffe005e0cf76f13af815209a&chksm=96e67235a191fb235caac777b002e2b0b519a4d540341352518a3c6939c03f164adb1cd3d659&token=1394220820&lang=zh_CN#rd)
-
 * [Java基础笔试练习（一）](https://mp.weixin.qq.com/s?__biz=MzIwMTg3NzYyOA==&mid=2247483931&idx=1&sn=df30a4a906a04cb27c8acf9dc116a3c4&chksm=96e67308a191fa1ee191114dcc484dcc6cafa44d1fa75416cf8751c02eb2fe0b07349da8a09a&token=1232740665&lang=zh_CN#rd)
 
 * [Java基础笔试练习（二）](https://mp.weixin.qq.com/s?__biz=MzIwMTg3NzYyOA==&mid=2247483938&idx=1&sn=661d5eb1f4930f88d5d537ba5ba75d19&chksm=96e67331a191fa271eee96909aa5091011a08d98923c9787c7b9ecd6b8b95c3ff7f9043757d5&token=1232740665&lang=zh_CN#rd)

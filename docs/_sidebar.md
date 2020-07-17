@@ -48,7 +48,7 @@
   
 * [Linux系列]
 
-  * [Linux](./docs/g-1linux.md)
+  * [Linux](./docs/h-1linux.md)
 
 * [面试记录]
   * [大厂面试记录](./docs/x-1大厂面试记录.md)  
