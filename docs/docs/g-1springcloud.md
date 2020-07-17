@@ -25,7 +25,8 @@ Spring cloud流应用程序启动器是基于Spring Boot的Spring集成应用程
  
 
 ### 5. 什么是Hystrix？它如何实现容错？ 
- Hystrix是一个延迟和容错库，旨在隔离远程系统，服务和第三方库的访问点，当出现故障是不可避免的故障时，停止级联故障并在复杂的分布式系统中实现弹性。
+ 
+Hystrix是一个延迟和容错库，旨在隔离远程系统，服务和第三方库的访问点，当出现故障是不可避免的故障时，停止级联故障并在复杂的分布式系统中实现弹性。
 通常对于使用微服务架构开发的系统，涉及到许多微服务。这些微服务彼此协作。 
 思考以下微服务
  
@@ -44,7 +45,7 @@ Spring cloud流应用程序启动器是基于Spring Boot的Spring集成应用程
  
 ### 7. 什么是Netflix Feign？它的优点是什么？
 
- Feign是受到Retrofit，JAXRS-2.0和WebSocket启发的java客户端联编程序。Feign的第一个目标是将约束分母的复杂性统一到http apis，而不考虑其稳定性。在employee-consumer的例子中，我们使用了employee-producer使用REST模板公开的REST服务。
+Feign是受到Retrofit，JAXRS-2.0和WebSocket启发的java客户端联编程序。Feign的第一个目标是将约束分母的复杂性统一到http apis，而不考虑其稳定性。在employee-consumer的例子中，我们使用了employee-producer使用REST模板公开的REST服务。
 但是我们必须编写大量代码才能执行以下步骤
 
 •	使用功能区进行负载平衡。
@@ -71,10 +72,8 @@ public void getEmployee() throws RestClientException, IOException {
     RestTemplate restTemplate = new RestTemplate();
     ResponseEntity<String> response=null;
     try{
-    response=restTemplate.exchange(baseUrl,
-            HttpMethod.GET, getHeaders(),String.class);
-    }catch (Exception ex)
-    {
+       response=restTemplate.exchange(baseUrl,HttpMethod.GET, getHeaders(),String.class);
+    }catch (Exception ex){
         System.out.println(ex);
     }
     System.out.println(response.getBody());

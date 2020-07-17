@@ -40,6 +40,9 @@
 * [中间件系列]
   
   * [RabbitMQ](./docs/f-1rabbitmq.md)
+  * [ActiveMQ](./docs/f-2ActiveMQ.md)
+  * [Kafka](./docs/f-3Kafka.md)
+  
   
 * [微服务系列]
 
@@ -51,6 +54,7 @@
   * [Linux](./docs/h-1linux.md)
 
 * [面试记录]
+
   * [大厂面试记录](./docs/x-1大厂面试记录.md)  
 
 * [其他]
