@@ -16,10 +16,10 @@
   * [Java基础面试（上）](./docs/c-1Java基础上.md)
   * [Java基础面试（中）](./docs/c-2Java基础中.md)
   * [Java基础面试（下）](./docs/c-3Java基础下.md)
-  * [Java集合](./docs/c-2java集合.md)
-  * [Java多线程](./docs/c-3Java多线程.md)
-  * [JVM虚拟机](./docs/c-4jvm.md)
-  * [Java笔试集合](./docs/c-5java笔试.md)
+  * [Java集合](./docs/c-4java集合.md)
+  * [Java多线程](./docs/c-5Java多线程.md)
+  * [JVM虚拟机](./docs/c-6jvm.md)
+  * [Java笔试集合](./docs/c-7java笔试.md)
   
 * [:information_source:数据库]
 
