@@ -1,3 +1,23 @@
+## 公众号 && QQ群
+
+![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=300')&emsp;&emsp;&emsp;&emsp;
+![QQ群](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/BLOG01/qq群.png ':size=200')
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
+<img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a>
+
+## 打赏
+
+整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~
+你的支持是作者最大的动力！！
+
+<div>
+
+![微信支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatwechatpay.jpg ':size=200') &emsp;&emsp;&emsp;&emsp;
+![支付宝支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatalipay.jpg ':size=200')
+
+</div>
+
+</hr>
 
 ### 1、面向对象的特征有哪些方面？
 
