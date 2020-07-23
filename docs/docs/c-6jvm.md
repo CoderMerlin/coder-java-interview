@@ -1,5 +1,14 @@
 !> 如果觉得文章还不错，可以关注公众号：**Coder编程**  哦~
 
+
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview10-jvm.png ':size=10%')
+
+图片来自：https://blog.csdn.net/u012102104/article/details/79773328
+
+### 1. 说一说JDK、JRE、JVM关系？
+
+
+
 ### 1. 内存模型以及分区，需要详细到每个区放什么。
 
 JVM 分为堆区和栈区，还有方法区，初始化的对象放在堆里面，引用放在栈里面，class类信息常量池（static常量和static变量）等放在方法区
