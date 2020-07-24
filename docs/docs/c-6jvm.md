@@ -1,7 +1,7 @@
 !> 如果觉得文章还不错，可以关注公众号：**Coder编程**  哦~
 
 
-![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview10-jvm.png ':size=10%')
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview10-jvm.png ':size=70%')
 
 图片来自：https://blog.csdn.net/u012102104/article/details/79773328
 
