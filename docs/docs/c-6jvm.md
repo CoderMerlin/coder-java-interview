@@ -1,15 +1,42 @@
 !> 如果觉得文章还不错，可以关注公众号：**Coder编程**  哦~
 
 
-![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview10-jvm.png ':size=70%')
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview10-jvm.png)
 
 图片来自：https://blog.csdn.net/u012102104/article/details/79773328
 
 ### 1. 说一说JDK、JRE、JVM关系？
 
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/04-jvm.png)
+
+#### JVM
+
+JVM即为Java虚拟机，它是Java跨平台实现的最核心的部分，所有的Java程序首先被编译成java.class字节码文件，这种文件可以在JVM上执行，JVM在执行字节码文件时，把其翻译成具体平台上的机器指令执行。（一次编译，到处运行）
+
+JVM执行程序的过程：
+
+- 1.加载.class 文件
+- 2.管理并分配内存
+- 3.执行垃圾收集
+
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/13-jvm.jpg)
+
+#### JRE
+
+JRE是Java Runtime Environment缩写，指Java运行环境。它包含Java虚拟机（jvm）、Java核心类库和支持文件。它不包含开发工具（JDK）--编译器，调试器和其他工具。
+
+#### JDK
+
+JDK是（Java Development Kit）的缩写，指的是Java开发工具包。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。
+
+#### 三者之间关系
+
+JDK包含JRE，JRE包含JVM。
 
 
-### 1. 内存模型以及分区，需要详细到每个区放什么。
+### 1. 内存模型以及分区，需要详细到每个区放什么？
+
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/14-jvm.png)
 
 JVM 分为堆区和栈区，还有方法区，初始化的对象放在堆里面，引用放在栈里面，class类信息常量池（static常量和static变量）等放在方法区
 
@@ -20,12 +47,24 @@ JVM 分为堆区和栈区，还有方法区，初始化的对象放在堆里面�
 - 本地方法栈：主要为Native方法服务
 - 程序计数器：记录当前线程执行的行号
 
+
+
+
 ### 2.	堆里面的分区：Eden，survival （from+ to），老年代，各自的特点。
+
+![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/15-jvm.png)
 
 堆里面分为新生代和老生代（java8取消了永久代，采用了Metaspace），新生代包含Eden+Survivor区，survivor区里面分为from和to区，内存回收时，如果用的是复制算法，从from复制到to，当经过一次或者多次GC之后，存活下来的对象会被移动到老年区，当JVM内存不够用的时候，会触发Full GC，清理JVM老年区当新生区满了之后会触发YGC,先把存活的对象放到其中一个Survice区，然后进行垃圾清理。因为如果仅仅清理需要删除的对象，这样会导致内存碎片，因此一般会把Eden 进行完全的清理，然后整理内存。那么下次GC 的时候，就会使用下一个Survive，这样循环使用。如果有特别大的对象，新生代放不下，就会使用老年代的担保，直接放到老年代里面。因为JVM 认为，一般大对象的存活时间一般比较久远。
 
 ### 3.	对象创建方法，对象的内存分配，对象的访问定位。
+
 new 一个对象
+
+![使用句柄](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/11-jvm.png)
+
+![直接指针](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/12-jvm.png)
+
+详细：https://www.cnblogs.com/mengchunchen/p/7859668.html
 
 ### 4.	GC的两种判定方法：
 
@@ -399,3 +438,9 @@ GChisto，一款专业分析gc日志的工具
 -XX:SurvivorRatio：伊甸园空间和幸存者空间的占比
 
 设定垃圾回收器 年轻代用 -XX:+UseParNewGC 年老代用-XX:+UseConcMarkSweepGC
+
+
+
+参考：
+
+- 
