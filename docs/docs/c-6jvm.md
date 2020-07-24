@@ -50,26 +50,48 @@ JVM 分为堆区和栈区，还有方法区，初始化的对象放在堆里面�
 
 
 
-### 2.	堆里面的分区：Eden，survival （from+ to），老年代，各自的特点。
+### 2.	堆里面的分区：Eden，survival （from+ to），老年代，各自的特点?
 
 ![JVM](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/15-jvm.png)
 
 堆里面分为新生代和老生代（java8取消了永久代，采用了Metaspace），新生代包含Eden+Survivor区，survivor区里面分为from和to区，内存回收时，如果用的是复制算法，从from复制到to，当经过一次或者多次GC之后，存活下来的对象会被移动到老年区，当JVM内存不够用的时候，会触发Full GC，清理JVM老年区当新生区满了之后会触发YGC,先把存活的对象放到其中一个Survice区，然后进行垃圾清理。因为如果仅仅清理需要删除的对象，这样会导致内存碎片，因此一般会把Eden 进行完全的清理，然后整理内存。那么下次GC 的时候，就会使用下一个Survive，这样循环使用。如果有特别大的对象，新生代放不下，就会使用老年代的担保，直接放到老年代里面。因为JVM 认为，一般大对象的存活时间一般比较久远。
 
-### 3.	对象创建方法，对象的内存分配，对象的访问定位。
+### 3.	对象创建方法，对象的内存分配，对象的访问定位？
 
-new 一个对象
+- 对象创建方法：
+JVM遇到一条new指令时，首先检查这个指令的参数是否能在常量池中定位到一个类的符号引用，并且检查这个符号引用代表的类是否已被加载、连接和初始化过。如果没有，那必须先执行相应的类的加载过程。
+
+- 对象的内存分配：
+
+对象所需内存的大小在类加载完成后便完全确定（对象内存布局），为对象分配空间的任务等同于把一块确定大小的内存从Java堆中划分出来。
+两种内存的分配方式：
+	- 指针碰撞
+	- 空闲列表
+
+- 对象的访问定位：
+
+对象的访问方式有使用句柄和直接指针。
+
+- 使用句柄：java堆会划分一块内存作为句柄池，reference中存的是对象的句柄地址，而句柄中包含了对象的实例数据的地址和类型数据的地址（在方法区）。
 
 ![使用句柄](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/11-jvm.png)
+
+
+- 使用直接指针：reference中存的是对象的地址，对象中分一小块内存保存类型数据的地址。优点：速度快。
 
 ![直接指针](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/12-jvm.png)
 
 详细：https://www.cnblogs.com/mengchunchen/p/7859668.html
 
-### 4.	GC的两种判定方法：
+### 4.	介绍一下GC的两种判定方法？
 
 引用计数法：指的是如果某个地方引用了这个对象就+1，如果失效了就-1，当为0就会回收但是JVM没有用这种方式，因为无法判定相互循环引用（A引用B,B引用A）的情况
+![引用计数法](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/16-jvm.png)
+
 引用链法： 通过一种GC ROOT的对象（方法区中静态变量引用的对象等-static变量）来判断，如果有一条链能够到达GC ROOT就说明，不能到达GC ROOT就说明可以回收
+![引用链法1](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/17-jvm.png)
+![引用链法2](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/18-jvm.png)
+
 
 ### 5.	SafePoint是什么
 
