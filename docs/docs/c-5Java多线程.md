@@ -2120,6 +2120,7 @@ Atomic包中的类基本的特性就是在多线程环境下，当有多个线�
 
 AtomicInteger 类的部分源码：
 
+
 // setup to use Unsafe.compareAndSwapInt for updates（更新操作时提供“比较并替换”的作用）
 private static final Unsafe unsafe = Unsafe.getUnsafe();
 private static final long valueOffset;
