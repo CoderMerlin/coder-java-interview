@@ -76,7 +76,7 @@
 
 - 5. 死亡( dead )：线程 run ()、 main () 方法执行结束，或者因异常退出了 run ()方法，则该线程结束生命周期。死亡的线程不可再次复生。
 
-
+![线程状态](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/thread/06线程状态.png)
 
 ### 5. 同步方法和同步代码块的区别是什么？
 

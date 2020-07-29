@@ -293,7 +293,7 @@ System.out.println(s2.intern() == s2);
 ### 26.类加载器
 
 
-![类加载器](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview02-jvm.jpg)
+![类加载器](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/02-jvm.jpg)
 
 
 启动类加载器：Bootstrap ClassLoader，负责加载存放在JDK\jre\lib(JDK代表JDK的安装目录，下同)下，或被-Xbootclasspath参数指定的路径中的，并且能被虚拟机识别的类库
