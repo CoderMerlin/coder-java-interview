@@ -63,19 +63,20 @@
 
 线程在执行过程中，可以处于下面几种状态：
 
-**就绪(Runnable)**:线程准备运行，不一定立马就能开始执行。
+- 1. 新建( new )：新创建了一个线程对象。
+- 2. 可运行( runnable )：线程对象创建后，其他线程(比如 main 线程）调用了该对象 的 start ()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获 取 cpu 的使用权 。
+- 3. 运行( running )：可运行状态( runnable )的线程获得了 cpu 时间片（ timeslice ） ，执行程序代码。
+- 4. 阻塞( block )：阻塞状态是指线程因为某种原因放弃了 cpu 使用权，也即让出了 cpu timeslice ，暂时停止运行。直到线程进入可运行( runnable )状态，才有 机会再次获得 cpu timeslice 转到运行( running )状态。阻塞的情况分三种：
 
-**运行中(Running)**：进程正在执行线程的代码。
+	(一). 等待阻塞：运行( running )的线程执行 o . wait ()方法， JVM 会把该线程放 入等待队列( waitting queue )中。
 
-**等待中(Waiting)**:线程处于阻塞的状态，等待外部的处理结束。
+	(二). 同步阻塞：运行( running )的线程在获取对象的同步锁时，若该同步锁 被别的线程占用，则 JVM 会把该线程放入锁池( lock pool )中。
 
-**睡眠中(Sleeping)**：线程被强制睡眠。
+	(三). 其他阻塞: 运行( running )的线程执行 Thread.sleep ( long ms )或 t.join ()方法，或者发出了 I/O 请求时，JVM 会把该线程置为阻塞状态。 当 sleep ()状态超时、 join ()等待线程终止或者超时、或者 I / O 处理完毕时，线程重新转入可运行( runnable )状态。
 
-**I/O阻塞(Blocked on I/O)**：等待I/O操作完成。
+- 5. 死亡( dead )：线程 run ()、 main () 方法执行结束，或者因异常退出了 run ()方法，则该线程结束生命周期。死亡的线程不可再次复生。
 
-**同步阻塞(Blocked on Synchronization)**：等待获取锁。
 
-**死亡(Dead)**：线程完成了执行。
 
 ### 5. 同步方法和同步代码块的区别是什么？
 
@@ -487,17 +488,21 @@ CAS是基于冲突检测的乐观锁（非阻塞）
 
 ### 54. 出现线程安全问题的原因：
 
-    线程切换带来的原子性问题
+1.线程切换带来的原子性问题
 
-    缓存导致的可见性问题
+2.缓存导致的可见性问题
 
-    编译优化带来的有序性问题
+3.编译优化带来的有序性问题
 
-解决办法：
+**解决办法：**
 
-    JDK Atomic开头的原子类、synchronized、LOCK，可以解决原子性问题
-    synchronized、volatile、LOCK，可以解决可见性问题
-    Happens-Before 规则可以解决有序性问题
+1.JDK Atomic开头的原子类、synchronized、LOCK，可以解决原子性问题
+    
+2.synchronized、volatile、LOCK，可以解决可见性问题
+   
+3.Happens-Before 规则可以解决有序性问题
+	
+什么是线程安全和线程不安全(解释并发问题)：https://www.cnblogs.com/zzcsza/p/12027682.html
 
 ### 55. 并行和并发有什么区别？
 
@@ -1314,7 +1319,13 @@ synchronized关键字原理
 
 可以看出在执行同步代码块之前之后都有一个monitor字样，其中前面的是monitorenter，后面的是离开monitorexit，不难想象一个线程也执行同步代码块，首先要获取锁，而获取锁的过程就是monitorenter ，在执行完代码块之后，要释放锁，释放锁就是执行monitorexit指令。
 
-为什么会有两个monitorexit呢？
+### 95. 说一说 happens-before 规则是什么？
+
+因为jvm会对代码进行编译优化，指令会出现重排序的情况，为了避免编译优化对并发编程安全性的影响，需要happens-before规则定义一些禁止编译优化的场景，保证并发编程的正确性。
+
+详细：深入理解happens-before规则(https://www.jianshu.com/p/9464bf340234)
+
+### 96. 为什么会有两个monitorexit呢？
 
 这个主要是防止在同步代码块中线程因异常退出，而锁没有得到释放，这必然会造成死锁（等待的线程永远获取不到锁）。因此最后一个monitorexit是保证在异常情况下，锁也可以得到释放，避免死锁。
 仅有ACC_SYNCHRONIZED这么一个标志，该标记表明线程进入该方法时，需要monitorenter，退出该方法时需要monitorexit。
@@ -1390,6 +1401,9 @@ volatile 常用于多线程环境下的单次操作(单次读或者单次写)。
 Java 中能创建 volatile 数组吗？
 
 能，Java 中可以创建 volatile 类型数组，不过只是一个指向数组的引用，而不是整个数组。意思是，如果改变引用指向的数组，将会受到 volatile 的保护，但是如果多个线程同时改变数组的元素，volatile 标示符就不能起到之前的保护作用了。
+
+
+
 volatile 变量和 atomic 变量有什么不同？
 
 volatile 变量可以确保先行关系，即写操作会发生在后续的读操作之前, 但它并不能保证原子性。例如用 volatile 修饰 count 变量，那么 count++ 操作就不是原子性的。
@@ -2021,7 +2035,7 @@ public class MyRunnable implements Runnable {
 
 
 编写测试程序，我们这里以阿里巴巴推荐的使用 ThreadPoolExecutor 构造函数自定义参数的方式来创建线程池。
-
+```
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -2057,7 +2071,7 @@ public class ThreadPoolExecutorDemo {
         System.out.println("Finished all threads");
     }
 }
-
+```
  
 可以看到我们上面的代码指定了：
 
@@ -2123,7 +2137,7 @@ Atomic包中的类基本的特性就是在多线程环境下，当有多个线�
 
 AtomicInteger 类的部分源码：
 
-
+```java
 // setup to use Unsafe.compareAndSwapInt for updates（更新操作时提供“比较并替换”的作用）
 private static final Unsafe unsafe = Unsafe.getUnsafe();
 private static final long valueOffset;
@@ -2136,7 +2150,7 @@ static {
 }
 
 private volatile int value;
-
+```
 
 AtomicInteger 类主要利用 CAS (compare and swap) + volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。
 
