@@ -20,15 +20,14 @@
   * [Java多线程](./docs/c-5Java多线程.md)
   * [JVM虚拟机](./docs/c-6jvm.md)
   * [Java笔试集合](./docs/c-7java笔试.md)
+  * [Java常见面试题](./docs/c-8Java常见面试题.md)
   
 * [:information_source:数据库]
-
-  * [Mysql](./docs/d-1mysql.md)
+* [Mysql](./docs/d-1mysql.md)
   * [Mysql](./docs/d-2mysql.md)
   * [Redis](./docs/d-3redis.md)
   * [memcached](./docs/d-4memcached.md)
   * [MongoDB](./docs/d-5mongodb.md)
-  
   
 * [框架系列]
 
@@ -36,13 +35,11 @@
   * [SpringMVC](./docs/e-2springmvc.md)
   * [SpringBoot](./docs/e-3springboot.md)
 
-  
 * [中间件系列]
   
   * [RabbitMQ](./docs/f-1rabbitmq.md)
   * [ActiveMQ](./docs/f-2ActiveMQ.md)
   * [Kafka](./docs/f-3Kafka.md)
-  
   
 * [微服务系列]
 
