@@ -98,7 +98,7 @@ public void sout(String name) { //形式参数为 name
     public void sout(String name) { //形式参数为 name
       System.out.println(name);
     }
-    
+
 
 实际参数是调用有参方法的时候真正传递的内容，而形式参数是用于接收实参内容的参数。
 
@@ -177,13 +177,13 @@ public void sout(String name) { //形式参数为 name
       user.setName("hollischuang");
       System.out.println("print in pass , user is " + user);
     }
-    
+
 
 输出结果：
 
     print in pass , user is User{name='hollischuang', gender='Male'}
     print in main , user is User{name='hollischuang', gender='Male'}
-    
+
 
 可以看到，对象类型在被传递到pass方法后，在方法内改变了其内容，最终调用方main方法中的对象也变了。
 
@@ -244,13 +244,13 @@ public void sout(String name) { //形式参数为 name
       user.setName("hollischuang");
       System.out.println("print in pass , user is " + user);
     }
-    
+
 
 上面的代码中，我们在pass方法中，重新new了一个user对象，并改变了他的值，输出结果如下：
 
     print in pass , user is User{name='hollischuang', gender='Male'}
     print in main , user is User{name='Hollis', gender='Male'}
-    
+
 
 再看一下整个过程中发生了什么：
 
@@ -288,12 +288,12 @@ OK，以上就是本文的全部内容，不知道本文是否帮助你解开了
 
 [Passing by Value vs. by Reference Visual Explanation][6]
 
- [1]: https://www.hollischuang.com/wp-content/uploads/2020/04/15865905252659.jpg
- [2]: https://www.hollischuang.com/wp-content/uploads/2020/04/pass-by-reference-vs-pass-by-value-animation.gif
- [3]: https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html
- [4]: https://en.wikipedia.org/wiki/Evaluation_strategy
- [5]: https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value
- [6]: https://blog.penjee.com/passing-by-value-vs-by-reference-java-graphical/
+[1]: https://www.hollischuang.com/wp-content/uploads/2020/04/15865905252659.jpg
+[2]: https://www.hollischuang.com/wp-content/uploads/2020/04/pass-by-reference-vs-pass-by-value-animation.gif
+[3]: https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html
+[4]: https://en.wikipedia.org/wiki/Evaluation_strategy
+[5]: https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value
+[6]: https://blog.penjee.com/passing-by-value-vs-by-reference-java-graphical/
 
 
  ## 基本数据类型
@@ -343,7 +343,7 @@ Java中的整型主要包含byte、short、int和long这四种，表示的数字
 
         int i = Integer.MAX_VALUE;
         int j = Integer.MAX_VALUE;
-
+    
         int k = i + j;
         System.out.println("i (" + i + ") + j (" + j + ") = k (" + k + ")");
 
@@ -720,9 +720,9 @@ Java SE 的自动拆装箱还提供了一个和缓存有关的功能，我们先
 
 [Java 的自动拆装箱][3]
 
- [1]: http://www.hollischuang.com/archives/435
- [2]: http://www.hollischuang.com/archives/1174
- [3]: https://www.jianshu.com/p/cc9312104876
+[1]: http://www.hollischuang.com/archives/435
+[2]: http://www.hollischuang.com/archives/1174
+[3]: https://www.jianshu.com/p/cc9312104876
 
 
 
@@ -755,7 +755,7 @@ Java SE 的自动拆装箱还提供了一个和缓存有关的功能，我们先
     
         }
     }
-    
+
 
 我们普遍认为上面的两个判断的结果都是false。虽然比较的值是相等的，但是由于比较的是对象，而对象的引用不一样，所以会认为两个if判断都是false的。在Java中，`==`比较的是对象应用，而`equals`比较的是值。所以，在这个例子中，不同的对象有不同的引用，所以在进行比较的时候都将返回false。奇怪的是，这里两个类似的if条件判断返回不同的布尔值。
 
@@ -763,7 +763,7 @@ Java SE 的自动拆装箱还提供了一个和缓存有关的功能，我们先
 
     integer1 == integer2
     integer3 != integer4
-    
+
 
 ### Java中Integer的缓存实现
 
@@ -777,7 +777,7 @@ Java的编译器把基本数据类型自动转换成封装类对象的过程叫�
 
     Integer a = 10; //this is autoboxing
     Integer b = Integer.valueOf(10); //under the hood
-    
+
 
 现在我们知道了这种机制在源码中哪里使用了，那么接下来我们就看看JDK中的`valueOf`方法。下面是`JDK 1.8.0 build 25`的实现：
 
@@ -801,7 +801,7 @@ Java的编译器把基本数据类型自动转换成封装类对象的过程叫�
                 return IntegerCache.cache[i + (-IntegerCache.low)];
             return new Integer(i);
         }
-    
+
 
 在创建对象之前先从IntegerCache.cache中寻找。如果没找到才使用new新建对象。
 
@@ -853,7 +853,7 @@ IntegerCache是Integer类中定义的一个`private static`的内部类。接下
     
             private IntegerCache() {}
         }
-    
+
 
 其中的javadoc详细的说明了缓存支持-128到127之间的自动装箱过程。最大值127可以通过`-XX:AutoBoxCacheMax=size`修改。 缓存通过一个for循环实现。从低到高并创建尽可能多的整数并存储在一个整数数组中。这个缓存会在Integer类第一次被使用的时候被初始化出来。以后，就可以使用缓存中包含的实例对象，而不是创建一个新的实例(在自动装箱的情况下)。
 
@@ -887,11 +887,11 @@ IntegerCache是Integer类中定义的一个`private static`的内部类。接下
 
 `Byte`, `Short`, `Long`有固定范围: -128 到 127。对于`Character`, 范围是 0 到 127。除了`Integer`以外，这个范围都不能改变。
 
- [1]: http://javapapers.com/java/java-integer-cache/
- [2]: http://www.hollischuang.com/?p=1174
- [3]: http://javapapers.com/
- [4]: http://www.hollischuang.com
- [5]: http://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html#jls-5.1.7
+[1]: http://javapapers.com/java/java-integer-cache/
+[2]: http://www.hollischuang.com/?p=1174
+[3]: http://javapapers.com/
+[4]: http://www.hollischuang.com
+[5]: http://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html#jls-5.1.7
 
 
 
@@ -1160,7 +1160,7 @@ IntegerCache是Integer类中定义的一个`private static`的内部类。接下
 以上代码输出结果为：
 ```
     default model : Model[success=null, failure=false]
-``` 
+```
 
 可以看到，当我们没有设置Model对象的字段的值的时候，Boolean类型的变量会设置默认值为`null`，而boolean类型的变量会设置默认值为`false`。
 
@@ -1193,15 +1193,15 @@ IntegerCache是Integer类中定义的一个`private static`的内部类。接下
 
 本文围绕布尔类型的变量定义的类型和命名展开了介绍，最终我们可以得出结论，在定义一个布尔类型的变量，尤其是一个给外部提供的接口返回值时，要使用success来命名，阿里巴巴Java开发手册建议使用封装类来定义POJO和RPC返回值中的变量。但是这不意味着可以随意的使用null，我们还是要尽量避免出现对null的处理的。
 
- [1]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449439364854.jpg
- [2]: https://download.oracle.com/otndocs/jcp/7224-javabeans-1.01-fr-spec-oth-JSpec/
- [3]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449455942045.jpg
- [4]: http://www.hollischuang.com/archives/1150
- [5]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449492627754.jpg
- [6]: http://www.hollischuang.com/archives/2700
- [7]: http://www.hollischuang.com/archives/883
- [8]: http://www.hollischuang.com/archives/74
- [9]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449430847727.jpg
+[1]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449439364854.jpg
+[2]: https://download.oracle.com/otndocs/jcp/7224-javabeans-1.01-fr-spec-oth-JSpec/
+[3]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449455942045.jpg
+[4]: http://www.hollischuang.com/archives/1150
+[5]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449492627754.jpg
+[6]: http://www.hollischuang.com/archives/2700
+[7]: http://www.hollischuang.com/archives/883
+[8]: http://www.hollischuang.com/archives/74
+[9]: http://www.hollischuang.com/wp-content/uploads/2018/12/15449430847727.jpg
 
 
 ## String相关
@@ -1211,7 +1211,7 @@ IntegerCache是Integer类中定义的一个`private static`的内部类。接下
 ### 定义一个字符串
 
     String s = "abcd";
-    
+
 
 ![String-Immutability-1][1]
 
@@ -1220,7 +1220,7 @@ IntegerCache是Integer类中定义的一个`private static`的内部类。接下
 ### 使用变量来赋值变量
 
     String s2 = s;
-    
+
 
 ![String-Immutability-2][2]
 
@@ -1229,7 +1229,7 @@ s2保存了相同的引用值，因为他们代表同一个对象。
 ### 字符串连接
 
     s = s.concat("ef");
-    
+
 
 ![string-immutability][3]
 
@@ -1241,9 +1241,9 @@ s2保存了相同的引用值，因为他们代表同一个对象。
 
 如果你需要一个可修改的字符串，应该使用StringBuffer 或者 StringBuilder。否则会有大量时间浪费在垃圾回收上，因为每次试图修改都有新的string对象被创建出来。
 
- [1]: http://www.programcreek.com/wp-content/uploads/2009/02/String-Immutability-1.jpeg
- [2]: http://www.programcreek.com/wp-content/uploads/2009/02/String-Immutability-2.jpeg
- [3]: http://www.programcreek.com/wp-content/uploads/2009/02/string-immutability-650x279.jpeg
+[1]: http://www.programcreek.com/wp-content/uploads/2009/02/String-Immutability-1.jpeg
+[2]: http://www.programcreek.com/wp-content/uploads/2009/02/String-Immutability-2.jpeg
+[3]: http://www.programcreek.com/wp-content/uploads/2009/02/string-immutability-650x279.jpeg
 
 
 ## 2. JDK 6和JDK 7中substring的原理及区别
@@ -1259,12 +1259,12 @@ String是Java中一个比较基础的类，每一个开发人员都会经常接�
     String x = "abcdef";
     x = x.substring(1,3);
     System.out.println(x);
-    
+
 
 输出内容：
 
     bc
-    
+
 
 ### 调用substring()时发生了什么？
 
@@ -1295,14 +1295,14 @@ String是通过字符数组实现的。在jdk 6 中，String类包含三个成�
         //check boundary
         return  new String(offset + beginIndex, endIndex - beginIndex, value);
     }
-    
+
 
 ### JDK 6中的substring导致的问题
 
 如果你有一个很长很长的字符串，但是当你使用substring进行切割的时候你只需要很短的一段。这可能导致性能问题，因为你需要的只是一小段字符序列，但是你却引用了整个字符串（因为这个非常长的字符数组一直在被引用，所以无法被回收，就可能导致内存泄露）。在JDK 6中，一般用以下方式来解决该问题，原理其实就是生成一个新的字符串并引用他。
 
     x = x.substring(x, y) + ""
-    
+
 
 关于JDK 6中subString的使用不当会导致内存系列已经被官方记录在Java Bug Database中：
 
@@ -1329,15 +1329,15 @@ Java源码中关于这部分的主要代码如下：
         int subLen = endIndex - beginIndex;
         return new String(value, beginIndex, subLen);
     }
-    
+
 
 以上是JDK 7中的subString方法，其使用`new String`创建了一个新字符串，避免对老字符串的引用。从而解决了内存泄露问题。
 
 所以，如果你的生产环境中使用的JDK版本小于1.7，当你使用String的subString方法时一定要注意，避免内存泄露。
 
- [1]: http://www.programcreek.com/wp-content/uploads/2013/09/string-immutability1-650x303.jpeg
- [2]: http://www.programcreek.com/wp-content/uploads/2013/09/string-substring-jdk6-650x389.jpeg
- [3]: http://www.programcreek.com/wp-content/uploads/2013/09/string-substring-jdk71-650x389.jpeg
+[1]: http://www.programcreek.com/wp-content/uploads/2013/09/string-immutability1-650x303.jpeg
+[2]: http://www.programcreek.com/wp-content/uploads/2013/09/string-substring-jdk6-650x389.jpeg
+[3]: http://www.programcreek.com/wp-content/uploads/2013/09/string-substring-jdk71-650x389.jpeg
 
 
 ## 3. replaceFirst、replaceAll、replace有什么区别？
@@ -1368,7 +1368,7 @@ Matcher matcher = pattern.matcher("正则表达式 Hello World,正则表达式 H
 System.out.println(matcher.replaceAll("Java")); 
 
 ```
-   
+
 
 2. replaceFirst() 替换第一个符合正则的数据
 
@@ -1380,7 +1380,7 @@ Matcher matcher = pattern.matcher("正则表达式 Hello World,正则表达式 H
 System.out.println(matcher.replaceFirst("Java")); 
     
 ```
-    
+
 3. replaceAll()替换所有html标签
 
 ```
@@ -1521,7 +1521,7 @@ System.out.println(StringUtils.join(wechat, ",", introduce));
     String result= StringUtils.join(list,",");
     System.out.println(result);
     //结果：Hollis,每日更新Java相关技术文章
-    
+
 
 并且，Java8中的String类中也提供了一个静态的join方法，用法和StringUtils.join类似。
 
@@ -1639,9 +1639,9 @@ append会直接拷贝字符到内部的字符数组中，如果字符数组长�
     if (noOfItems &lt;= 0) {
         return EMPTY;
     }
-
+    
     final StringBuilder buf = new StringBuilder(noOfItems * 16);
-
+    
     for (int i = startIndex; i &lt; endIndex; i++) {
         if (i &gt; startIndex) {
             buf.append(separator);
@@ -1734,14 +1734,14 @@ System.out.println((new StringBuilder()).append("+ cost:").append(t2 - t1).toStr
 
 2、如果在并发场景中进行字符串拼接的话，要使用`StringBuffer`来代替`StringBuilder`。
 
- [1]: http://www.hollischuang.com/archives/99
- [2]: http://www.hollischuang.com/archives/1249
- [3]: http://www.hollischuang.com/archives/2517
- [4]: http://www.hollischuang.com/archives/1230
- [5]: http://www.hollischuang.com/archives/1246
- [6]: http://www.hollischuang.com/archives/1232
- [7]: http://www.hollischuang.com/archives/61
- [8]: https://www.hollischuang.com/wp-content/uploads/2019/01/15472897908391.jpg
+[1]: http://www.hollischuang.com/archives/99
+[2]: http://www.hollischuang.com/archives/1249
+[3]: http://www.hollischuang.com/archives/2517
+[4]: http://www.hollischuang.com/archives/1230
+[5]: http://www.hollischuang.com/archives/1246
+[6]: http://www.hollischuang.com/archives/1232
+[7]: http://www.hollischuang.com/archives/61
+[8]: https://www.hollischuang.com/wp-content/uploads/2019/01/15472897908391.jpg
 
 
 ## 6. String.valueOf和Integer.toString的区别
@@ -1916,23 +1916,24 @@ public class switchDemoChar
 ## 8. 字符串池
 
 字符串大家一定都不陌生，他是我们非常常用的一个类。
- 
+
 String作为一个Java类，可以通过以下两种方式创建一个字符串：
- 
- 
+
+
     String str = "Hollis";
     
     String str = new String("Hollis")；
-    
+
  
+
 而第一种是我们比较常用的做法，这种形式叫做"字面量"。
- 
+
 在JVM中，为了减少相同的字符串的重复创建，为了达到节省内存的目的。会单独开辟一块内存，用于保存字符串常量，这个内存区域被叫做字符串常量池。
- 
+
 当代码中出现双引号形式（字面量）创建字符串对象时，JVM 会先对这个字符串进行检查，如果字符串常量池中存在相同内容的字符串对象的引用，则将这个引用返回；否则，创建新的字符串对象，然后将这个引用放入字符串常量池，并返回该引用。
- 
+
 这种机制，就是字符串驻留或池化。
- 
+
 
 ### 字符串常量池的位置
 
@@ -1973,12 +1974,12 @@ Java语言中负责编译出字节码的编译器是一个命令是`javac`。
             String s = "Hollis";
         }
     }
-    
+
 
 通过javac命令生成class文件：
 
     javac HelloWorld.java
-    
+
 
 生成`HelloWorld.class`文件:
 
@@ -2005,7 +2006,7 @@ Class常量池可以理解为是Class文件中的资源仓库。 Class文件中�
 当然，还有一种比较简单的查看Class文件中常量池的方法，那就是通过`javap`命令。对于以上的`HelloWorld.class`，可以通过
 
     javap -v  HelloWorld.class
-    
+
 
 查看常量池内容如下:
 
@@ -2066,13 +2067,13 @@ Java代码在进行`Javac`编译的时候，并不像C和C++那样有“连接�
 
 《深入理解java虚拟机》 [《Java虚拟机原理图解》 1.2.2、Class文件中的常量池详解（上）][7]
 
- [1]: http://www.hollischuang.com/archives/58
- [2]: http://www.hollischuang.com/archives/2322
- [3]: http://www.hollischuang.com/wp-content/uploads/2018/10/15401179593014.jpg
- [4]: http://www.hollischuang.com/archives/491
- [5]: http://www.hollischuang.com/wp-content/uploads/2018/10/15401192359009.jpg
- [6]: http://www.hollischuang.com/wp-content/uploads/2018/10/15401195127619.jpg
- [7]: https://blog.csdn.net/luanlouis/article/details/39960815
+[1]: http://www.hollischuang.com/archives/58
+[2]: http://www.hollischuang.com/archives/2322
+[3]: http://www.hollischuang.com/wp-content/uploads/2018/10/15401179593014.jpg
+[4]: http://www.hollischuang.com/archives/491
+[5]: http://www.hollischuang.com/wp-content/uploads/2018/10/15401192359009.jpg
+[6]: http://www.hollischuang.com/wp-content/uploads/2018/10/15401195127619.jpg
+[7]: https://blog.csdn.net/luanlouis/article/details/39960815
 
 ## 10. 运行时常量池
 
@@ -2117,9 +2118,9 @@ Java代码在进行`Javac`编译的时候，并不像C和C++那样有“连接�
 
 ## 11. intern
 
- 
+
 在JVM中，为了减少相同的字符串的重复创建，为了达到节省内存的目的。会单独开辟一块内存，用于保存字符串常量，这个内存区域被叫做字符串常量池。
- 
+
 
 当代码中出现双引号形式（字面量）创建字符串对象时，JVM 会先对这个字符串进行检查，如果字符串常量池中存在相同内容的字符串对象的引用，则将这个引用返回；否则，创建新的字符串对象，然后将这个引用放入字符串常量池，并返回该引用。
 
@@ -2145,7 +2146,7 @@ intern的功能很简单：
 String类中有很多重载的构造函数，其中有几个是支持用户传入length来执行长度的：
 
     public String(byte bytes[], int offset, int length) 
-    
+
 
 可以看到，这里面的参数length是使用int类型定义的，那么也就是说，String定义的时候，最大支持的长度就是int的最大范围值。
 
@@ -2158,12 +2159,12 @@ String类中有很多重载的构造函数，其中有几个是支持用户传�
 如以下代码：
 
     String s = "11111...1111";//其中有10万个字符"1"
-    
+
 
 当我们使用如上形式定义一个字符串的时候，当我们执行javac编译时，是会抛出异常的，提示如下：
 
     错误: 常量字符串过长
-    
+
 
 那么，明明String的构造函数指定的长度是可以支持2147483647(2^31 - 1)的，为什么像以上形式定义的时候无法编译呢？
 
@@ -2181,7 +2182,7 @@ String类中有很多重载的构造函数，其中有几个是支持用户传�
         u1 tag;
         u2 string_index;
     }
-    
+
 
 其中，string_index 项的值必须是对常量池的有效索引， 常量池在该索引处的项必须是 CONSTANT_Utf8_info 结构，表示一组 Unicode 码点序列，这组 Unicode 码点序列最终会被初始化为一个 String 对象。
 
@@ -2192,7 +2193,7 @@ CONSTANT_Utf8_info 结构用于表示字符串常量的值：
         u2 length;
         u1 bytes[length];
     }
-    
+
 
 其中，length则指明了 bytes[]数组的长度，其类型为u2，
 
@@ -2205,7 +2206,7 @@ CONSTANT_Utf8_info 结构用于表示字符串常量的值：
 那么，我们尝试使用以下方式定义字符串：
 
      String s = "11111...1111";//其中有65535个字符"1"
-    
+
 
 尝试使用javac编译，同样会得到"错误: 常量字符串过长"，那么原因是什么呢？
 
@@ -2217,7 +2218,7 @@ CONSTANT_Utf8_info 结构用于表示字符串常量的值：
             ++this.nerrs;
         }
     }
-    
+
 
 代码中可以看出，当参数类型为String，并且长度大于等于65535的时候，就会导致编译失败。
 
@@ -2244,7 +2245,7 @@ int 是一个 32 位变量类型，取正数部分来算的话，他们最长可
     4294967294 / 1024 = 4194303.998046875 (KB)
     4194303.998046875 / 1024 = 4095.9999980926513671875 (MB)
     4095.9999980926513671875 / 1024 = 3.99999999813735485076904296875 (GB)
-    
+
 
 有近 4G 的容量。
 
@@ -2254,7 +2255,7 @@ int 是一个 32 位变量类型，取正数部分来算的话，他们最长可
     for (int i = 0; i <100000 ; i++) {
         s+="i";
     }
-    
+
 
 得到的字符串长度就有10万，另外我之前在实际应用中遇到过这个问题。
 
@@ -2279,7 +2280,7 @@ int 是一个 32 位变量类型，取正数部分来算的话，他们最长可
     private transient Object[] elementData;  
     
     protected Object[] elementData;  
-    
+
 
 那么，首先我们来看一下**transient**关键字的作用是什么。
 
@@ -2337,7 +2338,7 @@ instanceof 是 Java 的保留关键字。它的作用是测试它左边的对象
         return singleton;  
         }  
     }  
-    
+
 
 如以上代码，是一个比较典型的使用双重锁校验的形式实现单例的，其中使用`volatile`关键字修饰可能被多个线程同时访问到的singleton。
 
@@ -2416,7 +2417,7 @@ volatile可以禁止指令重排，这就保证了代码的程序会严格按照
             System.out.println(test.inc);
         }
     }
-    
+
 
 以上代码比较简单，就是创建10个线程，然后分别执行1000次`i++`操作。正常情况下，程序的输出结果应该是10000，但是，多次执行的结果都小于10000。这其实就是`volatile`无法满足原子性的原因。
 
@@ -2442,13 +2443,13 @@ volatile可以禁止指令重排，这就保证了代码的程序会严格按照
         return singleton;  
         }  
     }  
-    
+
 
 答案，我们在下一篇文章：既生synchronized，何生亮volatile中介绍，敬请关注我的博客(http://47.103.216.138)和公众号(Hollis)。
 
- [1]: http://47.103.216.138/archives/2550
- [2]: http://47.103.216.138/archives/2637
- [3]: http://47.103.216.138/archives/2618
+[1]: http://47.103.216.138/archives/2550
+[2]: http://47.103.216.138/archives/2637
+[3]: http://47.103.216.138/archives/2618
 
 
 ## 4.synchronized
@@ -2483,7 +2484,7 @@ volatile可以禁止指令重排，这就保证了代码的程序会严格按照
             }
         }
     }
-    
+
 
 被`synchronized`修饰的代码块及方法，在同一时间，只能被单个线程访问。
 
@@ -2526,7 +2527,7 @@ volatile可以禁止指令重排，这就保证了代码的程序会严格按照
             21: aload_2
             22: athrow
             23: return
-    
+
 
 通过反编译后代码可以看出：对于同步方法，JVM采用`ACC_SYNCHRONIZED`标记符来实现同步。 对于同步代码块。JVM采用`monitorenter`、`monitorexit`两个指令来实现同步。
 
@@ -2594,12 +2595,12 @@ ObjectMonitor类中提供了几个方法，如`enter`、`exit`、`wait`、`notif
 
 好啦，关于`synchronized`关键字，我们介绍了其用法、原理、以及如何保证的原子性、顺序性和可见性，同时也扩展的留下了锁优化相关的资料及思考。后面我们会继续介绍`volatile`关键字以及他和`synchronized`的区别等。敬请期待。
 
- [1]: http://www.hollischuang.com/archives/2550
- [2]: http://www.hollischuang.com/archives/1883
- [3]: https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.11.10
- [4]: http://www.hollischuang.com/archives/2030
- [5]: http://www.hollischuang.com/archives/2618
- [6]: http://www.hollischuang.com/archives/2344
+[1]: http://www.hollischuang.com/archives/2550
+[2]: http://www.hollischuang.com/archives/1883
+[3]: https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.11.10
+[4]: http://www.hollischuang.com/archives/2030
+[5]: http://www.hollischuang.com/archives/2618
+[6]: http://www.hollischuang.com/archives/2344
 
 
 ## 5. final
@@ -2629,7 +2630,7 @@ final是Java中的一个关键字，它所表示的是“这部分是无法修�
             System.out.println("Hollis");
         }
     }
-    
+
 当我们定义以上类的子类的时候，无法覆盖其name方法，会编译失败。
 
 
@@ -2641,8 +2642,9 @@ final是Java中的一个关键字，它所表示的是“这部分是无法修�
     final class Parent {
         
     }
-    
-    
+
+
+​    
 以上类不能被继承！
 
 
@@ -2680,7 +2682,7 @@ Java的包装类和实用类包含许多静态方法。main()方法就是Java程
         for(int x : js) sum+=x;
         return sum;
     }
-    
+
 从Java8以上版本开始也可以有接口类型的静态方法了。
 
 ### 静态代码块
@@ -2698,7 +2700,7 @@ Java不允许在静态块中使用非静态变量。一个类中可以有多个�
         str=&quot;Test&quot;;
         setCount(2);
     }
-    
+
 ### 静态类
 
 Java可以嵌套使用静态类，但是静态类不能用于嵌套的顶层。
@@ -2719,24 +2721,5 @@ const是Java预留关键字，用于后期扩展用，用法跟final相似，不
 
 
 算法补充------
-## 复杂度实验
-
-我们以为自己写出了一个O(nlogn)算法，结果实际却是O(n^2)算法？
-
-那么有什么方法可以快速看出我们写的算法时间复杂度到底是多少呢？
-我们回顾上面的数据规模，大家熟记到心里，最好是等减一个数量级。
-我们来通过实验来观察数据规模。
-
-### 递归算法复杂度分析
-
-不是有递归的函数就一定是O(nlogn)!
-![递归算法]
-
-- 如果递归函数中，只进行一次递归调用
-- 递归深度为depth
-- 在每个递归函数中，时间复杂度为T
-- 则总体的时间复杂度为O(T*depth)
-
-![递归算法例题]
 
 
