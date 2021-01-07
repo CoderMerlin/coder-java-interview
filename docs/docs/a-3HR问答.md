@@ -1,24 +1,3 @@
-## 公众号 && QQ群
-
-![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=300')&emsp;&emsp;&emsp;&emsp;
-![QQ群](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/BLOG01/qq群.png ':size=200')
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
-<img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a>
-
-## 打赏
-
-整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~
-你的支持是作者最大的动力！！
-
-<div>
-
-![微信支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatwechatpay.jpg ':size=200') &emsp;&emsp;&emsp;&emsp;
-![支付宝支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatalipay.jpg ':size=200')
-
-</div>
-
-</hr>
-
 
 
 ![HR面试都会问什么问题？（上）](https://upload-images.jianshu.io/upload_images/7326374-5b8040dc713bdfdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -539,14 +518,19 @@
 学历我想只要是本科的学历，就表明觉得我具备了根本的学习能力。剩下的，你是学士也好，还是博士也好，对于这一点的讨论，不是看你学了多少知识，而是看你在这个领域上发挥了什么，也就是所说的能力问题。一个人工作能力的高低直接决定其职场命运，而学历的高低只是进入一个企业的敲门砖，如果贵公司把学历卡在博士上，我就无法进入贵公司，当然这不一定只是我个人的损失，如果一个本科生都能完成的工作，您又何必非要招聘一位博士生呢？
 
 
-## 文末
 
->欢迎关注个人微信公众号：**Coder编程**
-获取最新原创技术文章和免费学习资料，更有大量精品思维导图、面试资料、PMP备考资料等你来领，方便你随时随地学习技术知识！
-新建了一个qq群：315211365，欢迎大家进群交流一起学习。谢谢了！也可以介绍给身边有需要的朋友。
-
->文章收录至
-Github: https://github.com/CoderMerlin/coder-programming
-Gitee: https://gitee.com/573059382/coder-programming
-欢迎**关注**并star~
-![微信公众号](https://upload-images.jianshu.io/upload_images/7326374-17240d33bce396a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>## :mega: 最后：
+>
+>- 整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~     
+>- 你的支持是作者最大的动力！！
+>
+><div align=center> 
+>    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221556.png" width = "150" height = "150" alt="微信支付" />
+>    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221614.png" width = "150" height = "150" alt="微信支付"  />
+>    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209225035.png" width = "150" height = "150" alt="公众号"/></div>
+>
+>
+>
+>> 欢迎关注公众号：Coder编程 推送最新的**干货**技术文章，进入公众号回复“1”加入 **Java交流群**！
+>>
+>> 注明：大部分文章从网络搜集，如有侵权，请联系作者进行删除！

@@ -1,46 +1,11 @@
-## 简介
-
-> 注明：大部分文章从网络搜集，如有侵权，请联系作者进行删除！
+## :mega: 简介
 
 > 博客地址：https://www.coder-programming.cn/ </br>
 > Java面试题地址：https://coder-programming.cn/coder-java-interview
 
 > 欢迎大家多多点击，多多支持！往后我会陆续完善博客文章！供大家一起学习一起进步！
 
-## 计划
-
-面试题整理
-
-- [x] 计算机网络
-- [ ] 数据结构
-- [ ] 算法
-  - [ ] 算法刷题
-- [ ] Java基础知识
-- [x] Java线程、并发知识
-- [x] Java集合
-- [ ] 框架系列
-  - [x] Spring
-  - [x] SpringMVC
-  - [x] SpringBoot
-  - [x] SpringCloud
-  - [ ] Mybatis
-- [ ] 数据库系列
-- [ ] 中间件
-- [ ] 面试记录
-- [ ] 等等
-
-
-# :loudspeaker: Coder-Programming(Coder编程)介绍 #
-
-### 注明：大部分文章从网络搜集，如有侵权，请联系作者进行删除！
-
-## 千呼万唤始出来！我的个人博客终于出炉了！
-
-- 博客地址：https://www.coder-programming.cn/
-- 欢迎大家多多点击，多多支持！往后我会陆续完善博客文章！供大家一起学习一起进步！
-
-> 文章为导航页面，记录一些编程开发中的一些相关知识，希望能与大家一起进步!
-## :mega: 我的相关文章会发表在以下博客或论坛 ##
+## :mega: 博客或论坛 ##
 
 
 <p align="center">
@@ -58,30 +23,36 @@
 </p>
 
 
+## :mega: 公众号 && QQ群
 
 
 
-## 公众号 && QQ群
-
-![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=300')&emsp;&emsp;&emsp;&emsp;
-![QQ群](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/BLOG01/qq群.png ':size=200')
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
-<img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a>
-
-## 打赏
-
-整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~
-你的支持是作者最大的动力！！
-
-<div>
-
-![微信支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatwechatpay.jpg ':size=200') &emsp;&emsp;&emsp;&emsp;
-![支付宝支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatalipay.jpg ':size=200')
-
-</div>
+<div align=left> 
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209225035.png" width = "150" height = "150" alt="公众号"/>
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209224846.png" width = "150" height = "150" alt="QQ群"/>
+    <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
+        <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a></div>
 
 
-# :mega: 最后： #
+
+## :mega: Coder-Programming(Coder编程)介绍 
+
+### 千呼万唤始出来！我的个人博客终于出炉了！
+
+- 博客地址：https://www.coder-programming.cn/
+- 欢迎大家多多点击，多多支持！往后我会陆续完善博客文章！供大家一起学习一起进步！
+
+
+## :mega: 最后：
+
+- 整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~     
+- 你的支持是作者最大的动力！！
+
+<div align=center> 
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221556.png" width = "150" height = "150" alt="微信支付" />
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221614.png" width = "150" height = "150" alt="支付宝支付"  />
 
 
 > 欢迎关注公众号：Coder编程 推送最新的**干货**技术文章，进入公众号回复“1”加入**Java交流群**！
+>
+> 注明：大部分文章从网络搜集，如有侵权，请联系作者进行删除！

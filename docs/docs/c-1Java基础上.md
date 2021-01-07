@@ -1,24 +1,3 @@
-## 公众号 && QQ群
-
-![公众号](https://oscimg.oschina.net/oscnet/eeedc9e1e292d9ceff0ad08b56d88c02127.jpg ':size=300')&emsp;&emsp;&emsp;&emsp;
-![QQ群](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/BLOG01/qq群.png ':size=200')
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
-<img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a>
-
-## 打赏
-
-整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~
-你的支持是作者最大的动力！！
-
-<div>
-
-![微信支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatwechatpay.jpg ':size=200') &emsp;&emsp;&emsp;&emsp;
-![支付宝支付](https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/wechatalipay.jpg ':size=200')
-
-</div>
-
-</hr>
-
 ### 1、面向对象的特征有哪些方面？
 
 答：面向对象的特征主要有以下几个方面：
@@ -111,7 +90,7 @@ IntegerCache是Integer的内部类，其代码如下所示：
         static final int low = -128;
         static final int high;
         static final Integer cache[];
-
+    
         static {
             // high value may be configured by property
             int h = 127;
@@ -128,20 +107,21 @@ IntegerCache是Integer的内部类，其代码如下所示：
                 }
             }
             high = h;
-
+    
             cache = new Integer[(high - low) + 1];
             int j = low;
             for(int k = 0; k < cache.length; k++)
                 cache[k] = new Integer(j++);
-
+    
             // range [-128, 127] must be interned (JLS7 5.1.7)
             assert IntegerCache.high >= 127;
         }
-
+    
         private IntegerCache() {}
     }
 
  
+
 
 简单的说，如果整型字面量的值在-128到127之间，那么不会new新的Integer对象，而是直接引用常量池中的Integer对象，所以上面的面试题中f1==f2的结果是true，而f3==f4的结果是false。
 
@@ -162,7 +142,7 @@ String str = new String("hello");
 上面的语句中变量str放在栈上，用new创建出来的字符串对象放在堆上，而"hello"这个字面量是放在方法区的。
 
     补充1：较新版本的Java（从Java 6的某个更新开始）中，由于JIT编译器的发展和"逃逸分析"技术的逐渐成熟，栈上分配、标量替换等优化技术使得对象一定分配在堆上这件事情已经变得不那么绝对了。
-
+    
     补充2：运行时常量池相当于Class文件常量池具有动态性，Java语言并不要求常量一定只有编译期间才能产生，运行期间也可以将新的常量放入池中，String类的intern()方法就是这样的。
 
 看看下面代码的执行结果是什么并且比较一下Java 7以前和以后的运行结果是否一致。
@@ -200,7 +180,7 @@ public class PhoneNumber {
         result = prime * result + ((prefix == null) ? 0 : prefix.hashCode());
         return result;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -260,7 +240,7 @@ namespace CS01 {
             x = y;
             y = temp;
         }
-
+    
         public static void Main (string[] args) {
             int a = 5, b = 10;
             swap (ref a, ref b);
@@ -277,7 +257,7 @@ namespace CS01 {
 答：Java平台提供了两种类型的字符串：String和StringBuffer/StringBuilder，它们可以储存和操作字符串。其中String是只读字符串，也就意味着String引用的字符串内容是不能被改变的。而StringBuffer/StringBuilder类表示的字符串对象可以直接进行修改。StringBuilder是Java 5中引入的，它和StringBuffer的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都没有被synchronized修饰，因此它的效率也比StringBuffer要高。
 
     面试题1 - 什么情况下用+运算符进行字符串连接比调用StringBuffer/StringBuilder对象的append方法连接字符串性能更好？
-
+    
     面试题2 - 请说出下面程序的输出。
 
 class StringEqualTest {
@@ -402,7 +382,7 @@ public class Poker {
     }
 }
 
- 
+
 测试代码：
 
 class PokerTest {
@@ -414,7 +394,7 @@ class PokerTest {
         // 对于非静态内部类Card
         // 只有通过其外部类Poker对象才能创建Card对象
         Poker.Card c2 = poker.new Card("红心", 1);    // 自己创建一张牌
-
+    
         System.out.println(c1);     // 洗牌后的第一张
         System.out.println(c2);     // 打印: 红心A
     }
@@ -426,11 +406,11 @@ class PokerTest {
 class Outer {
 
     class Inner {}
-
+    
     public static void foo() { new Inner(); }
-
+    
     public void bar() { new Inner(); }
-
+    
     public static void main(String[] args) {
         new Inner();
     }
@@ -438,9 +418,9 @@ class Outer {
 
 
     注意：Java中非静态内部类对象的创建要依赖其外部类对象，上面的面试题中foo和main方法都是静态方法，静态方法中没有this，也就是说没有所谓的外部类对象，因此无法创建内部类对象，如果要在静态方法中创建内部类对象，可以这样做：
-
+    
     new Outer().new Inner();
-
+    
     1
 
 25、Java 中会存在内存泄漏吗，请简单描述。
@@ -454,22 +434,22 @@ public class MyStack<T> {
     private int size = 0;
 
     private static final int INIT_CAPACITY = 16;
-
+    
     public MyStack() {
         elements = (T[]) new Object[INIT_CAPACITY];
     }
-
+    
     public void push(T elem) {
         ensureCapacity();
         elements[size++] = elem;
     }
-
+    
     public T pop() {
         if(size == 0) 
             throw new EmptyStackException();
         return elements[--size];
     }
-
+    
     private void ensureCapacity() {
         if(elements.length == size) {
             elements = Arrays.copyOf(elements, 2 * size + 1);
@@ -508,17 +488,17 @@ public class MyUtil {
     private MyUtil() {
         throw new AssertionError();
     }
-
+    
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> T clone(T obj) throws Exception {
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(bout);
         oos.writeObject(obj);
-
+    
         ByteArrayInputStream bin = new ByteArrayInputStream(bout.toByteArray());
         ObjectInputStream ois = new ObjectInputStream(bin);
         return (T) ois.readObject();
-
+    
         // 说明：调用ByteArrayInputStream或ByteArrayOutputStream对象的close方法没有任何意义
         // 这两个基于内存的流只要垃圾回收器清理对象就能够释放资源，这一点不同于对外部资源（如文件流）的释放
     }
@@ -689,7 +669,7 @@ class A {
     static {
         System.out.print("1");
     }
-
+    
     public A() {
         System.out.print("2");
     }
@@ -700,7 +680,7 @@ class B extends A{
     static {
         System.out.print("a");
     }
-
+    
     public B() {
         System.out.print("b");
     }
@@ -785,7 +765,7 @@ Calendar.getInstance().getTimeInMillis();
 System.currentTimeMillis();
 Clock.systemDefaultZone().millis(); // Java 8
 
- 
+
 问题3：代码如下所示。
 
 Calendar time = Calendar.getInstance();
@@ -806,7 +786,7 @@ class DateFormatTest {
         SimpleDateFormat oldFormatter = new SimpleDateFormat("yyyy/MM/dd");
         Date date1 = new Date();
         System.out.println(oldFormatter.format(date1));
-
+    
         // Java 8
         DateTimeFormatter newFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate date2 = LocalDate.now();
@@ -841,7 +821,7 @@ class YesterdayCurrent {
     public static void main(String[] args) {
         LocalDateTime today = LocalDateTime.now();
         LocalDateTime yesterday = today.minusDays(1);
-
+    
         System.out.println(yesterday);
     }
 }
@@ -996,12 +976,12 @@ public class Student implements Comparable<Student> {
         this.name = name;
         this.age = age;
     }
-
+    
     @Override
     public String toString() {
         return "Student [name=" + name + ", age=" + age + "]";
     }
-
+    
     @Override
     public int compareTo(Student o) {
         return this.age - o.age; // 比较年龄(年龄的升序)
@@ -1021,7 +1001,7 @@ class Test01 {
         set.add(new Student("XJ WANG", 32));
         set.add(new Student("Bruce LEE", 60));
         set.add(new Student("Bob YANG", 22));
-
+    
         for(Student stu : set) {
             System.out.println(stu);
         }
@@ -1044,21 +1024,21 @@ public class Student {
         this.name = name;
         this.age = age;
     }
-
+    
     /**
      * 获取学生姓名
      */
     public String getName() {
         return name;
     }
-
+    
     /**
      * 获取学生年龄
      */
     public int getAge() {
         return age;
     }
-
+    
     @Override
     public String toString() {
         return "Student [name=" + name + ", age=" + age + "]";
@@ -1081,19 +1061,19 @@ class Test02 {
         list.add(new Student("XJ WANG", 32));
         list.add(new Student("Bruce LEE", 60));
         list.add(new Student("Bob YANG", 22));
-
+    
         // 通过sort方法的第二个参数传入一个Comparator接口对象
         // 相当于是传入一个比较对象大小的算法到sort方法中
         // 由于Java中没有函数指针、仿函数、委托这样的概念
         // 因此要将一个算法传入一个方法中唯一的选择就是通过接口回调
         Collections.sort(list, new Comparator<Student> () {
-
+    
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getName().compareTo(o2.getName());    // 比较学生姓名
             }
         });
-
+    
         for(Student stu : list) {
             System.out.println(stu);
         }
@@ -1204,15 +1184,15 @@ public class Test01 {
     public static void main(String[] args) {
         Account account = new Account();
         ExecutorService service = Executors.newFixedThreadPool(100);
-
+    
         for(int i = 1; i <= 100; i++) {
             service.execute(new AddMoneyThread(account, 1));
         }
-
+    
         service.shutdown();
-
+    
         while(!service.isTerminated()) {}
-
+    
         System.out.println("账户余额: " + account.getBalance());
     }
 }
@@ -1351,7 +1331,7 @@ class MyTask implements Callable<Integer> {
     public MyTask(int upperBounds) {
         this.upperBounds = upperBounds;
     }
-
+    
     @Override
     public Integer call() throws Exception {
         int sum = 0; 
@@ -1371,13 +1351,13 @@ class Test {
         for(int i = 0; i < 10; i++) {
             list.add(service.submit(new MyTask((int) (Math.random() * 100))));
         }
-
+    
         int sum = 0;
         for(Future<Integer> future : list) {
             // while(!future.isDone()) ;
             sum += future.get();
         }
-
+    
         System.out.println(sum);
     }
 }
@@ -1434,7 +1414,7 @@ public final class MyUtil {
     private MyUtil() {
         throw new AssertionError();
     }
-
+    
     public static void fileCopy(String source, String target) throws IOException {
         try (InputStream in = new FileInputStream(source)) {
             try (OutputStream out = new FileOutputStream(target)) {
@@ -1446,7 +1426,7 @@ public final class MyUtil {
             }
         }
     }
-
+    
     public static void fileCopyNIO(String source, String target) throws IOException {
         try (FileInputStream in = new FileInputStream(source)) {
             try (FileOutputStream out = new FileOutputStream(target)) {
@@ -1479,7 +1459,7 @@ public final class MyUtil {
     private MyUtil() {
         throw new AssertionError();
     }
-
+    
     /**
      * 统计给定文件中给定字符串的出现次数
      * 
@@ -1537,11 +1517,11 @@ class Test12 {
     public static void main(String[] args) {
         showDirectory(new File("/Users/Hao/Downloads"));
     }
-
+    
     public static void showDirectory(File f) {
         _walkDirectory(f, 0);
     }
-
+    
     private static void _walkDirectory(File f, int level) {
         if(f.isDirectory()) {
             for(File temp : f.listFiles()) {
@@ -1565,14 +1545,14 @@ class ShowFileTest {
     public static void main(String[] args) throws IOException {
         Path initPath = Paths.get("/Users/Hao/Downloads");
         Files.walkFileTree(initPath, new SimpleFileVisitor<Path>() {
-
+    
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) 
                     throws IOException {
                 System.out.println(file.getFileName().toString());
                 return FileVisitResult.CONTINUE;
             }
-
+    
         });
     }
 }
@@ -1592,7 +1572,7 @@ import java.net.Socket;
 public class EchoServer {
 
     private static final int ECHO_SERVER_PORT = 6789;
-
+    
     public static void main(String[] args) {        
         try(ServerSocket server = new ServerSocket(ECHO_SERVER_PORT)) {
             System.out.println("服务器已经启动...");
@@ -1604,14 +1584,14 @@ public class EchoServer {
             e.printStackTrace();
         }
     }
-
+    
     private static class ClientHandler implements Runnable {
         private Socket client;
-
+    
         public ClientHandler(Socket client) {
             this.client = client;
         }
-
+    
         @Override
         public void run() {
             try(BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -1681,16 +1661,16 @@ public class EchoServerNIO {
     private static final int ECHO_SERVER_PORT = 6789;
     private static final int ECHO_SERVER_TIMEOUT = 5000;
     private static final int BUFFER_SIZE = 1024;
-
+    
     private static ServerSocketChannel serverChannel = null;
     private static Selector selector = null;    // 多路复用选择器
     private static ByteBuffer buffer = null;    // 缓冲区
-
+    
     public static void main(String[] args) {
         init();
         listen();
     }
-
+    
     private static void init() {
         try {
             serverChannel = ServerSocketChannel.open();
@@ -1703,7 +1683,7 @@ public class EchoServerNIO {
             throw new RuntimeException(e);
         }
     }
-
+    
     private static void listen() {
         while (true) {
             try {
@@ -1720,10 +1700,10 @@ public class EchoServerNIO {
             }
         }
     }
-
+    
     private static void handleKey(SelectionKey key) throws IOException {
         SocketChannel channel = null;
-
+    
         try {
             if (key.isAcceptable()) {
                 ServerSocketChannel serverChannel = (ServerSocketChannel) key.channel();
@@ -1767,11 +1747,11 @@ public final class CharsetHelper {
 
     private CharsetHelper() {
     }
-
+    
     public static ByteBuffer encode(CharBuffer in) throws CharacterCodingException{
         return encoder.encode(in);
     }
-
+    
     public static CharBuffer decode(ByteBuffer in) throws CharacterCodingException{
         return decoder.decode(in);
     }
@@ -1791,29 +1771,30 @@ public final class CharsetHelper {
 答：下面的代码以连接本机的Oracle数据库为例，演示JDBC操作数据库的步骤。
 
     加载驱动。
-
+    
     Class.forName("oracle.jdbc.driver.OracleDriver");
 
 
     创建连接。
-
+    
     Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
 
  
-    创建语句。
 
+    创建语句。
+    
     PreparedStatement ps = con.prepareStatement("select * from emp where sal between ? and ?");
     ps.setInt(1, 1000);
     ps.setInt(2, 3000);
 
 
     执行语句。
-
+    
     ResultSet rs = ps.executeQuery();
 
 
     处理结果。
-
+    
     while(rs.next()) {
         System.out.println(rs.getInt("empno") + " - " + rs.getString("ename"));
     }
@@ -1821,7 +1802,7 @@ public final class CharsetHelper {
 
 
     关闭资源。
-
+    
     finally {
         if(con != null) {
             try {
@@ -2312,5 +2293,21 @@ public class MyUtil {
 
     说明：上面的代码中给出了折半查找的两个版本，一个用递归实现，一个用循环实现。需要注意的是计算中间位置时不应该使用(high+ low) / 2的方式，因为加法运算可能导致整数越界，这里应该使用以下三种方式之一：low + (high - low) / 2或low + (high – low) >> 1或(low + high) >>> 1（>>>是逻辑右移，是不带符号位的右移）
 ————————————————
-版权声明：本文为CSDN博主「骆昊」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/jackfrued/article/details/44921941
+
+
+
+## :mega: 最后：
+
+- 整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~     
+- 你的支持是作者最大的动力！！
+
+<div align=center> 
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221556.png" width = "150" height = "150" alt="微信支付" />
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221614.png" width = "150" height = "150" alt="微信支付"  />
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209225035.png" width = "150" height = "150" alt="公众号"/></div>
+
+
+
+> 欢迎关注公众号：Coder编程 推送最新的**干货**技术文章，进入公众号回复“1”加入**Java交流群**！
+>
+> 注明：大部分文章从网络搜集，如有侵权，请联系作者进行删除！
