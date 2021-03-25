@@ -23,17 +23,6 @@
 </p>
 
 
-## :mega: 公众号 && QQ群
-
-
-
-<div align=left> 
-    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209225035.png" width = "150" height = "150" alt="公众号"/>
-    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209224846.png" width = "150" height = "150" alt="QQ群"/>
-    <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
-        <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a></div>
-
-
 
 ## :mega: Coder-Programming(Coder编程)介绍 
 
@@ -43,15 +32,47 @@
 - 欢迎大家多多点击，多多支持！往后我会陆续完善博客文章！供大家一起学习一起进步！
 
 
-## :mega: 最后：
+## :mega: 建立知识体系
 
-- 整理不易，如果文章对你有帮助，就请作者喝杯咖啡吧~     
-- 你的支持是作者最大的动力！！
+* [ ] 面试前的准备
+* [ ] 简历
+* [ ] 网络
+* [ ] 操作系统
+* [ ] 数据结构与算法
+* [ ] Java
+  * [ ] IO流
+  * [ ] 集合容器
+  * [ ] 并发编程
+  * [ ] JVM虚拟机
+* [ ] Spring全家桶
+  * [ ] Spring
+  * [ ] SpringMVC
+  * [ ] SpringBoot
+  * [ ] SpringCloud
+* [ ] 数据库
+  * [ ] Mysql
+  * [ ] Redis
+* [ ] 消息中间件
+  * [X] RabbitMQ
+  * [ ] Kafaka
+* [ ] 设计模式
+* [ ] 系统架构
+  * [ ] 框架选型
+  * [ ] 微服务架构
+* [ ] 项目经验
+* [ ] 面试经验
+
+
+## :mega: 联系方式&支持作者
 
 <div align=center> 
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209225035.png" width = "150" height = "150" alt="公众号"/>
+    <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209224846.png" width = "150" height = "150" alt="QQ群"/>
+    <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=cgNsmjzxrsVgeYRUo37BcdjplgLQJxhN&jump_from=webapi">
+    <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Java/框架/面试/微服务" title="Java/框架/面试/微服务"></a>
     <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221556.png" width = "150" height = "150" alt="微信支付" />
     <img src="https://cdn.jsdelivr.net/gh/CoderMerlin/blog-image/images/interview/java20201209221614.png" width = "150" height = "150" alt="支付宝支付"  />
-
+ </div>
 
 > 欢迎关注公众号：Coder编程 推送最新的**干货**技术文章，进入公众号回复“1”加入**Java交流群**！
 >
